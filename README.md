@@ -13,7 +13,7 @@
 
 ## 👋 About these notes
 
-My notes on Git and GitHub, from `git init` to interactive rebase, written in my own words as I learned the tool.
+My notes on Git and GitHub, from `git init` to interactive rebase, written as I learned the tool.
 
 I keep them for two reasons:
 
