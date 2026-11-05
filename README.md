@@ -7,7 +7,7 @@
 ![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Sections](https://img.shields.io/badge/sections-11-blue?style=for-the-badge)
-![Progress](https://img.shields.io/badge/written-7%20%2F%2011-orange?style=for-the-badge)
+![Progress](https://img.shields.io/badge/written-8%20%2F%2011-orange?style=for-the-badge)
 
 </div>
 
@@ -27,7 +27,7 @@ These are student notes, written as I go. If you spot a mistake, open an issue �
 
 ## 🗺️ What's covered
 
-**Progress:** `█████████████████░░░░░░░░░░` 7 / 11
+**Progress:** `████████████████████░░░░░░░` 8 / 11
 &nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
 
 ### Part 1 — Foundations
@@ -71,7 +71,7 @@ Working with a remote, and with other people.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
-| 08 | [Remotes & GitHub](08-remotes-and-github/README.md) | `origin/main`, clone/fetch/pull/push, SSH, the rejected-push fix | 🚧 |
+| 08 | [Remotes & GitHub](08-remotes-and-github/README.md) | `origin/main`, clone/fetch/pull/push, SSH, the rejected-push fix | ✅ |
 | 09 | [Pull Requests & Open Source](09-pull-requests-and-open-source/README.md) | PRs, issues/labels/milestones, the fork → upstream → PR flow | 🚧 |
 
 ### Part 6 — Rewriting History
