@@ -7,7 +7,7 @@
 ![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Sections](https://img.shields.io/badge/sections-11-blue?style=for-the-badge)
-![Progress](https://img.shields.io/badge/written-1%20%2F%2011-orange?style=for-the-badge)
+![Progress](https://img.shields.io/badge/written-2%20%2F%2011-orange?style=for-the-badge)
 
 </div>
 
@@ -27,7 +27,7 @@ These are student notes, written as I go. If you spot a mistake, open an issue �
 
 ## 🗺️ What's covered
 
-**Progress:** `██░░░░░░░░░░░░░░░░░░░░░░░░░` 1 / 11
+**Progress:** `█████░░░░░░░░░░░░░░░░░░░░░░` 2 / 11
 &nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
 
 ### Part 1 — Foundations
@@ -44,7 +44,7 @@ The everyday loop: snapshotting your project, and undoing when needed.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
-| 02 | [Creating Snapshots](02-creating-snapshots/README.md) | `init`, the three areas, `add`/`commit`, the commit object, atomic commits | 🚧 |
+| 02 | [Creating Snapshots](02-creating-snapshots/README.md) | `init`, the three areas, `add`/`commit`, the commit object, atomic commits | ✅ |
 | 03 | [Inspecting & Undoing](03-inspecting-and-undoing/README.md) | `diff` vs `--staged`, `rm --cached` + `.gitignore`, `mv`, the three undos | 🚧 |
 
 ### Part 3 — Browsing History
