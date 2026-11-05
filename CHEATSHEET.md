@@ -115,11 +115,11 @@ git tag -a v1.0 -m "Release 1.0"         # annotated release tag
 git commit --amend -m "new message"  # fix the last commit's message
 git commit --amend --no-edit         # add a forgotten file to the last commit
 git reset --soft HEAD~1              # uncommit, keep changes staged
-git reset --mixed HEAD~1            # uncommit + unstage (default)
-git reset --hard HEAD~1            # uncommit + discard changes ⚠️
-git revert <commit>              # safe undo of a PUSHED commit (adds an inverse commit)
-git reflog                      # ⛑ everywhere HEAD has been — recover "lost" commits
-git rebase -i HEAD~<n>         # reword / squash / drop / reorder recent commits
+git reset --mixed HEAD~1             # uncommit + unstage (default)
+git reset --hard HEAD~1              # uncommit + discard changes ⚠️
+git revert <commit>                  # safe undo of a PUSHED commit (adds an inverse commit)
+git reflog                           # ⛑ everywhere HEAD has been — recover "lost" commits
+git rebase -i HEAD~<n>               # reword / squash / drop / reorder recent commits
 ```
 
 > [!TIP]

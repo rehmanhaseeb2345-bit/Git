@@ -11,40 +11,24 @@
 
 </div>
 
-## 👋 Hey, welcome to my notes
+## 👋 About these notes
 
-I went deep on **Git & GitHub** — the whole thing, from `git init` to interactive rebase — and I wrote it all down here, in my own words, explained the way it finally clicked for me.
+My notes on Git and GitHub, from `git init` to interactive rebase, written in my own words as I learned the tool.
 
-This repo is two things for me:
+I keep them for two reasons:
 
-- **My own documentation.** When I forget a flag or how something works, I come here before I google it.
-- **A record of what I've learned.** From what a snapshot is, all the way to rebasing, the fork workflow, and recovering from mistakes.
+- **A reference for myself** — when I forget a flag or how something works, I check here before I google it.
+- **A record of what I've learned** — snapshots, branching, the fork workflow, rewriting history, and getting out of mistakes.
 
 > [!NOTE]
-> **Every command's output in these notes is real.** Git runs entirely on my own machine (Linux Mint), so unlike tools that need a cluster or a paid account, I actually ran everything here — the output you see is what my terminal printed, not illustrative.
+> **Every command's output here is real.** Git runs on my own machine (Linux Mint), so I actually ran everything you see — the output is what my terminal printed, not made up.
 
-These are student notes, written while learning. If you spot a mistake, please open an issue — I'd genuinely love to learn from it.
-
-## 🧭 How I write every page
-
-Every topic follows the same structure (my template is in [TEMPLATE.md](TEMPLATE.md)):
-
-| Part | What it gives you |
-|---|---|
-| **What it is** | A plain-English definition |
-| **Why it exists** | The problem it solves |
-| **Key points** | The core ideas, broken down, with real commands |
-| **Visual** | A hand-made diagram (SVG) + Mermaid where it helps |
-| **⚠️ Watch out** | Mistakes and misconceptions to avoid |
-| **🔧 Fix it** | If you hit this, run that — the recovery one-liner |
-| **🧪 Try it** | A small exercise, with a collapsible answer |
-| **🤔 What confused me** | The thing that tripped me up |
+These are student notes, written as I go. If you spot a mistake, open an issue — I'd like to fix it.
 
 ## 🗺️ What's covered
 
 **Progress:** `░░░░░░░░░░░░░░░░░░░░░░░░░░░` 0 / 11
-
-**Legend:** ✅ written · 🚧 being written · ⬜ not yet
+&nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
 
 ### Part 1 — Foundations
 
@@ -56,7 +40,7 @@ What Git is and how it thinks, before any command.
 
 ### Part 2 — The Core Workflow
 
-The everyday loop: snapshotting your project and undoing when needed.
+The everyday loop: snapshotting your project, and undoing when needed.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
@@ -65,7 +49,7 @@ The everyday loop: snapshotting your project and undoing when needed.
 
 ### Part 3 — Browsing History
 
-Reading history like a search engine, and investigating it like a detective.
+Finding what you need in history, and tracking down when something changed.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
@@ -92,7 +76,7 @@ Working with a remote, and with other people.
 
 ### Part 6 — Rewriting History
 
-Cleaning up before you share — and getting out of any mistake.
+Cleaning up before you share, and getting out of any mistake.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
@@ -104,7 +88,22 @@ Cleaning up before you share — and getting out of any mistake.
 |---|---|:-:|
 | [⛑ Recovery Guide — I Screwed Up, Now What?](appendix-recovery/README.md) | Symptom → fix for every common disaster, tagged safe vs shared-history care | 🚧 |
 
-## 📁 How this repo is organized
+## 🧭 How every page is structured
+
+Each topic uses the same layout, so the notes read the same way throughout (full template in [TEMPLATE.md](TEMPLATE.md)):
+
+| Part | What it covers |
+|---|---|
+| **What it is** | A plain-English definition |
+| **Why it exists** | The problem it solves |
+| **Key points** | The core ideas, broken down, with real commands |
+| **Visual** | A hand-made SVG diagram, plus Mermaid where it helps |
+| **⚠️ Watch out** | Common mistakes and misconceptions |
+| **🔧 Fix it** | The recovery one-liner for that topic |
+| **🧪 Try it** | A small exercise, with the answer in a dropdown |
+| **🤔 What confused me** | The thing that tripped me up |
+
+## 📁 Repo layout
 
 ```
 Git/
