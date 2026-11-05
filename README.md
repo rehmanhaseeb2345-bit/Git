@@ -7,7 +7,7 @@
 ![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Sections](https://img.shields.io/badge/sections-11-blue?style=for-the-badge)
-![Progress](https://img.shields.io/badge/written-0%20%2F%2011-orange?style=for-the-badge)
+![Progress](https://img.shields.io/badge/written-1%20%2F%2011-orange?style=for-the-badge)
 
 </div>
 
@@ -27,7 +27,7 @@ These are student notes, written as I go. If you spot a mistake, open an issue �
 
 ## 🗺️ What's covered
 
-**Progress:** `░░░░░░░░░░░░░░░░░░░░░░░░░░░` 0 / 11
+**Progress:** `██░░░░░░░░░░░░░░░░░░░░░░░░░` 1 / 11
 &nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
 
 ### Part 1 — Foundations
@@ -36,7 +36,7 @@ What Git is and how it thinks, before any command.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
-| 01 | [What is Git](01-what-is-git/README.md) | VCS, centralized vs distributed, snapshots not diffs, install & config | 🚧 |
+| 01 | [What is Git](01-what-is-git/README.md) | VCS, centralized vs distributed, snapshots not diffs, install & config | ✅ |
 
 ### Part 2 — The Core Workflow
 
