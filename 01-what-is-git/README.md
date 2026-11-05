@@ -21,7 +21,7 @@
 | 7 | [Getting help](#7-getting-help) | `--help`, `-h`, `man` |
 | ✔ | [Watch out](#-watch-out) · [Fix it](#-fix-it) · [Try it](#-try-it) · [What confused me](#-what-confused-me) | |
 
-<p align="center"><img src="images/what-is-git.svg" alt="Centralized version control keeps history on one server; distributed gives every machine the full history" width="820"></p>
+<p align="center"><img src="images/snapshots.svg" alt="Git saves a full snapshot of the project at each commit, and I can jump back to any one" width="820"></p>
 
 ---
 
@@ -50,6 +50,8 @@ Three problems show up fast: I lose track of which one is current, I can't see w
 ## 3. Centralized vs distributed
 
 There are two ways a VCS can be built, and the difference matters day to day.
+
+<p align="center"><img src="images/centralized-distributed.svg" alt="Centralized keeps history on one server; distributed gives every machine the full history" width="820"></p>
 
 - **Centralized** (SVN, TFS): the history lives on **one server**. Every action needs the network. If the server is down, nobody can commit or even look at history.
 - **Distributed** (Git, Mercurial): **every person has the full history** on their machine. I work offline, and only talk to a server when I want to share.
@@ -98,6 +100,11 @@ git config --list --show-origin                   # check it, and see which file
 | system | `--system` | every user on the machine |
 | global | `--global` | all my repos |
 | local | `--local` (default) | just the current repo — **overrides the others** |
+
+```mermaid
+flowchart LR
+  S["system<br/>every user"] -->|beaten by| G["global<br/>all my repos"] -->|beaten by| L["local<br/>this repo — wins"]
+```
 
 So I keep my personal email global, and set a work email with `--local` inside a work repo when I need to.
 
