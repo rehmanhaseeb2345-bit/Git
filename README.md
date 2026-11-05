@@ -7,7 +7,7 @@
 ![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Sections](https://img.shields.io/badge/sections-11-blue?style=for-the-badge)
-![Progress](https://img.shields.io/badge/written-3%20%2F%2011-orange?style=for-the-badge)
+![Progress](https://img.shields.io/badge/written-4%20%2F%2011-orange?style=for-the-badge)
 
 </div>
 
@@ -27,7 +27,7 @@ These are student notes, written as I go. If you spot a mistake, open an issue �
 
 ## 🗺️ What's covered
 
-**Progress:** `███████░░░░░░░░░░░░░░░░░░░░` 3 / 11
+**Progress:** `██████████░░░░░░░░░░░░░░░░░` 4 / 11
 &nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
 
 ### Part 1 — Foundations
@@ -53,7 +53,7 @@ Finding what you need in history, and tracking down when something changed.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
-| 04 | [Reading & Filtering History](04-reading-and-filtering-history/README.md) | `log` shaping, `--author`/`--grep`/`-S`, ranges, aliases | 🚧 |
+| 04 | [Reading & Filtering History](04-reading-and-filtering-history/README.md) | `log` shaping, `--author`/`--grep`/`-S`, ranges, aliases | ✅ |
 | 05 | [Investigating History](05-investigating-history/README.md) | `HEAD~n`, detached HEAD, `bisect`, `blame`, restoring deleted files, tags | 🚧 |
 
 ### Part 4 — Branching & Merging

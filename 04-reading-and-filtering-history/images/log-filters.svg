@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="348" viewBox="0 0 820 348" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="1" y="1" width="818" height="346" rx="16" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="40" y="40" font-size="21" font-weight="700" fill="#1f2328">Filtering the log</text>
+  <text x="40" y="64" font-size="14" fill="#57606a">The whole history goes in the top; a filter narrows it to the commits I want.</text>
+
+  <!-- the whole history: a row of grey commit dots -->
+  <text x="410" y="92" text-anchor="middle" font-size="11" fill="#8a93a0" letter-spacing="0.5">THE WHOLE HISTORY · thousands of commits</text>
+  <g fill="#ccd3da">
+    <circle cx="120" cy="108" r="8"/><circle cx="178" cy="108" r="8"/><circle cx="236" cy="108" r="8"/><circle cx="294" cy="108" r="8"/><circle cx="352" cy="108" r="8"/><circle cx="410" cy="108" r="8"/><circle cx="468" cy="108" r="8"/><circle cx="526" cy="108" r="8"/><circle cx="584" cy="108" r="8"/><circle cx="642" cy="108" r="8"/><circle cx="700" cy="108" r="8"/>
+  </g>
+
+  <!-- funnel -->
+  <path d="M96 124 L724 124 L496 266 L324 266 Z" fill="#f6f8fa" stroke="#d0d7de"/>
+
+  <!-- filter pills inside the funnel -->
+  <g font-family="Consolas, Menlo, monospace" font-size="12" font-weight="700">
+    <rect x="300" y="132" width="220" height="26" rx="13" fill="#e7f0fb" stroke="#1971c2" stroke-width="1.3"/>
+    <text x="410" y="149" text-anchor="middle" fill="#1971c2">--author · by person</text>
+    <rect x="300" y="164" width="220" height="26" rx="13" fill="#edfbf3" stroke="#1a7f52" stroke-width="1.3"/>
+    <text x="410" y="181" text-anchor="middle" fill="#1a7f52">--grep · by message</text>
+    <rect x="300" y="196" width="220" height="26" rx="13" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1.3"/>
+    <text x="410" y="213" text-anchor="middle" fill="#6d28d9">-S · by code change</text>
+    <rect x="300" y="228" width="220" height="26" rx="13" fill="#fff7ed" stroke="#c2410c" stroke-width="1.3"/>
+    <text x="410" y="245" text-anchor="middle" fill="#b45309">--after · by time</text>
+  </g>
+
+  <!-- the result: a couple of highlighted commits -->
+  <circle cx="392" cy="286" r="9" fill="#1971c2"/>
+  <circle cx="428" cy="286" r="9" fill="#1971c2"/>
+  <text x="410" y="312" text-anchor="middle" font-size="12" fill="#57606a">the commits I was looking for</text>
+
+  <!-- summary bar -->
+  <rect x="40" y="318" width="740" height="24" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="56" y="335" font-size="12" fill="#1f2328"><tspan font-weight="700" fill="#1a7f52">--grep</tspan> searches the message · <tspan font-weight="700" fill="#6d28d9">-S</tspan> searches the code — the two people mix up.</text>
+</svg>
