@@ -103,7 +103,11 @@ git config --list --show-origin                   # check it, and see which file
 
 ```mermaid
 flowchart LR
-  S["system<br/>every user"] -->|beaten by| G["global<br/>all my repos"] -->|beaten by| L["local<br/>this repo — wins"]
+  S["⚙️ system<br/>every user"] -->|beaten by| G["🌍 global<br/>all my repos"] -->|beaten by| L["📍 local<br/>this repo ✅ wins"]
+  style S fill:#f6f8fa,stroke:#8a93a0,stroke-width:1.5px,color:#57606a
+  style G fill:#e7f0fb,stroke:#1971c2,stroke-width:1.5px,color:#1971c2
+  style L fill:#edfbf3,stroke:#1a7f52,stroke-width:2.5px,color:#1a7f52
+  linkStyle default stroke:#8b5cf6,stroke-width:1.5px
 ```
 
 So I keep my personal email global, and set a work email with `--local` inside a work repo when I need to.
