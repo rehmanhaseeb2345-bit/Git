@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="282" viewBox="0 0 820 282" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="1" y="1" width="818" height="280" rx="16" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="40" y="40" font-size="21" font-weight="700" fill="#1f2328">A branch is a pointer</text>
+  <text x="40" y="64" font-size="14" fill="#57606a">Not a copy of my files — just a little label that points at a commit.</text>
+
+  <!-- commit chain -->
+  <line x1="170" y1="128" x2="580" y2="128" stroke="#c4cdd6" stroke-width="2.5"/>
+  <g font-size="11" fill="#fff" text-anchor="middle" font-weight="700">
+    <circle cx="170" cy="128" r="16" fill="#1971c2"/><text x="170" y="132">c1</text>
+    <circle cx="375" cy="128" r="16" fill="#1971c2"/><text x="375" y="132">c2</text>
+    <circle cx="580" cy="128" r="16" fill="#1971c2"/><text x="580" y="132">c3</text>
+  </g>
+
+  <!-- main flag above c3 -->
+  <rect x="536" y="80" width="88" height="26" rx="13" fill="#e7f0fb" stroke="#1971c2" stroke-width="1.4"/>
+  <text x="580" y="98" text-anchor="middle" font-size="12" font-weight="700" fill="#1971c2">main</text>
+  <line x1="580" y1="106" x2="580" y2="112" stroke="#1971c2" stroke-width="2"/>
+  <!-- HEAD tag -->
+  <rect x="470" y="80" width="54" height="26" rx="6" fill="#1f2328"/>
+  <text x="497" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">HEAD</text>
+  <line x1="524" y1="93" x2="534" y2="93" stroke="#1f2328" stroke-width="1.6" marker-end="url(#hd)"/>
+  <defs><marker id="hd" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#1f2328"/></marker></defs>
+
+  <!-- feature flag below c3 -->
+  <line x1="580" y1="144" x2="580" y2="150" stroke="#c2410c" stroke-width="2"/>
+  <rect x="536" y="150" width="88" height="26" rx="13" fill="#fff7ed" stroke="#c2410c" stroke-width="1.4"/>
+  <text x="580" y="168" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">feature</text>
+
+  <!-- ref-file callout -->
+  <rect x="40" y="152" width="430" height="44" rx="9" fill="#282420"/>
+  <text x="56" y="172" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#9cc66a">$ cat .git/refs/heads/main</text>
+  <text x="56" y="189" font-size="11.5" font-family="Consolas, Menlo, monospace" fill="#f3ece0">26c8aa3…<tspan fill="#9c9386">   ← the whole branch is one line</tspan></text>
+
+  <!-- summary bar -->
+  <rect x="40" y="214" width="740" height="46" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="56" y="242" font-size="12.5" fill="#1f2328">Creating a branch copies nothing — just a ~41-byte <tspan font-weight="700" fill="#1971c2">pointer</tspan>. Committing moves it forward; switching moves <tspan font-weight="700" fill="#1f2328">HEAD</tspan>.</text>
+</svg>

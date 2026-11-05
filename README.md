@@ -7,7 +7,7 @@
 ![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Sections](https://img.shields.io/badge/sections-11-blue?style=for-the-badge)
-![Progress](https://img.shields.io/badge/written-5%20%2F%2011-orange?style=for-the-badge)
+![Progress](https://img.shields.io/badge/written-6%20%2F%2011-orange?style=for-the-badge)
 
 </div>
 
@@ -27,7 +27,7 @@ These are student notes, written as I go. If you spot a mistake, open an issue �
 
 ## 🗺️ What's covered
 
-**Progress:** `████████████░░░░░░░░░░░░░░░` 5 / 11
+**Progress:** `███████████████░░░░░░░░░░░░` 6 / 11
 &nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
 
 ### Part 1 — Foundations
@@ -62,7 +62,7 @@ Parallel work, and bringing it back together.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
-| 06 | [Branches](06-branches/README.md) | Branches as movable pointers, create/switch/delete, compare, stash | 🚧 |
+| 06 | [Branches](06-branches/README.md) | Branches as movable pointers, create/switch/delete, compare, stash | ✅ |
 | 07 | [Merging](07-merging/README.md) | Fast-forward vs 3-way, conflicts, squash, rebase, cherry-pick | 🚧 |
 
 ### Part 5 — Collaboration
