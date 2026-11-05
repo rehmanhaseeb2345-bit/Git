@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="300" viewBox="0 0 820 300" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="1" y="1" width="818" height="298" rx="16" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="40" y="40" font-size="21" font-weight="700" fill="#1f2328">Merge vs rebase</text>
+  <text x="40" y="64" font-size="14" fill="#57606a">Two ways to combine branches — one keeps the fork, one straightens it.</text>
+
+  <line x1="410" y1="86" x2="410" y2="250" stroke="#d0d7de" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- ============ MERGE (left) ============ -->
+  <text x="210" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2328" letter-spacing="0.5">MERGE</text>
+  <!-- lines -->
+  <line x1="72" y1="172" x2="152" y2="142" stroke="#1971c2" stroke-width="2.5"/>
+  <line x1="152" y1="142" x2="232" y2="142" stroke="#1971c2" stroke-width="2.5"/>
+  <line x1="72" y1="172" x2="152" y2="202" stroke="#c2410c" stroke-width="2.5"/>
+  <line x1="152" y1="202" x2="232" y2="202" stroke="#c2410c" stroke-width="2.5"/>
+  <line x1="232" y1="142" x2="316" y2="172" stroke="#d6541f" stroke-width="2.5"/>
+  <line x1="232" y1="202" x2="316" y2="172" stroke="#d6541f" stroke-width="2.5"/>
+  <!-- commits -->
+  <g font-size="10" fill="#fff" text-anchor="middle" font-weight="700">
+    <circle cx="72" cy="172" r="12" fill="#8a93a0"/><text x="72" y="176">A</text>
+    <circle cx="152" cy="142" r="12" fill="#1971c2"/><text x="152" y="146">B</text>
+    <circle cx="232" cy="142" r="12" fill="#1971c2"/><text x="232" y="146">C</text>
+    <circle cx="152" cy="202" r="12" fill="#c2410c"/><text x="152" y="206">X</text>
+    <circle cx="232" cy="202" r="12" fill="#c2410c"/><text x="232" y="206">Y</text>
+    <circle cx="316" cy="172" r="13" fill="#d6541f"/><text x="316" y="176">M</text>
+  </g>
+  <text x="232" y="126" text-anchor="middle" font-size="10" fill="#1971c2" font-weight="700">main</text>
+  <text x="232" y="222" text-anchor="middle" font-size="10" fill="#c2410c" font-weight="700">feature</text>
+  <text x="316" y="150" text-anchor="middle" font-size="10" fill="#d6541f" font-weight="700">merge commit</text>
+
+  <!-- ============ REBASE (right) ============ -->
+  <text x="612" y="102" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2328" letter-spacing="0.5">REBASE</text>
+  <line x1="454" y1="178" x2="766" y2="178" stroke="#c4cdd6" stroke-width="2.5"/>
+  <g font-size="10" fill="#fff" text-anchor="middle" font-weight="700">
+    <circle cx="454" cy="178" r="12" fill="#8a93a0"/><text x="454" y="182">A</text>
+    <circle cx="532" cy="178" r="12" fill="#1971c2"/><text x="532" y="182">B</text>
+    <circle cx="610" cy="178" r="12" fill="#1971c2"/><text x="610" y="182">C</text>
+    <circle cx="688" cy="178" r="12" fill="#c2410c"/><text x="688" y="182">X´</text>
+    <circle cx="766" cy="178" r="12" fill="#c2410c"/><text x="766" y="182">Y´</text>
+  </g>
+  <text x="610" y="146" text-anchor="middle" font-size="10.5" fill="#57606a">one clean straight line</text>
+  <text x="727" y="206" text-anchor="middle" font-size="10" fill="#c2410c" font-weight="700">new hashes</text>
+
+  <!-- summary bar -->
+  <rect x="40" y="252" width="740" height="40" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="56" y="277" font-size="12.5" fill="#1f2328"><tspan font-weight="700" fill="#d6541f">Merge</tspan> keeps the fork + a merge commit. <tspan font-weight="700" fill="#d6541f">Rebase</tspan> makes a clean line but <tspan font-weight="700" fill="#c2410c">new hashes</tspan> — only on unshared commits.</text>
+</svg>
