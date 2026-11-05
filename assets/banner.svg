@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1210"/>
+      <stop offset="1" stop-color="#f05133"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="320" rx="20" fill="url(#bg)"/>
+
+  <!-- faint commit-graph motif -->
+  <g opacity="0.12" stroke="#ffffff" stroke-width="5" fill="none">
+    <line x1="980" y1="70" x2="980" y2="250"/>
+    <path d="M980 150 C980 110, 1080 110, 1080 150 L1080 250"/>
+    <path d="M1080 170 C1080 210, 980 210, 980 210"/>
+  </g>
+  <g opacity="0.18" fill="#ffffff">
+    <circle cx="980" cy="90" r="9"/>
+    <circle cx="980" cy="150" r="9"/>
+    <circle cx="1080" cy="150" r="9"/>
+    <circle cx="1080" cy="210" r="9"/>
+    <circle cx="980" cy="250" r="11"/>
+  </g>
+
+  <!-- title -->
+  <text x="64" y="138" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Git Notes</text>
+  <text x="66" y="188" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ffe3da">Everything I learned about Git &amp; GitHub,</text>
+  <text x="66" y="220" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ffe3da">written in my own words.</text>
+
+  <!-- pills -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#ffffff">
+    <rect x="66" y="248" width="120" height="34" rx="17" fill="#ffffff" fill-opacity="0.16"/>
+    <text x="126" y="270" text-anchor="middle">11 sections</text>
+    <rect x="198" y="248" width="170" height="34" rx="17" fill="#ffffff" fill-opacity="0.16"/>
+    <text x="283" y="270" text-anchor="middle">plain explanations</text>
+    <rect x="380" y="248" width="150" height="34" rx="17" fill="#ffffff" fill-opacity="0.16"/>
+    <text x="455" y="270" text-anchor="middle">tested on Linux</text>
+  </g>
+
+  <!-- terminal -->
+  <rect x="820" y="64" width="400" height="192" rx="14" fill="#140d0b" stroke="#ffffff" stroke-opacity="0.15"/>
+  <circle cx="846" cy="88" r="6" fill="#ff5f57"/>
+  <circle cx="866" cy="88" r="6" fill="#febc2e"/>
+  <circle cx="886" cy="88" r="6" fill="#28c840"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="18" xml:space="preserve">
+    <text x="846" y="134"><tspan fill="#ff8a65">$</tspan><tspan fill="#e6edf3"> git add .</tspan></text>
+    <text x="846" y="166"><tspan fill="#ff8a65">$</tspan><tspan fill="#e6edf3"> git commit -m "learn"</tspan></text>
+    <text x="846" y="198"><tspan fill="#ff8a65">$</tspan><tspan fill="#e6edf3"> git push origin main</tspan></text>
+    <text x="846" y="226"><tspan fill="#7cc4ff">&#9611;</tspan></text>
+  </g>
+</svg>
