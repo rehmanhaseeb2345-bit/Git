@@ -1,30 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="820" height="320" viewBox="0 0 820 320" font-family="Segoe UI, Helvetica, Arial, sans-serif">
-  <rect x="1" y="1" width="818" height="318" rx="16" fill="#ffffff" stroke="#d0d7de"/>
-  <text x="40" y="40" font-size="21" font-weight="700" fill="#1f2328">The three undos</text>
-  <text x="40" y="64" font-size="14" fill="#57606a">Each one undoes a change in a different area — so ask which area first.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 342" font-family="'Segoe UI',system-ui,-apple-system,Roboto,sans-serif">
+  <rect x="1" y="1" width="818" height="340" rx="18" fill="#FFFFFF" stroke="#DDE3EC" stroke-width="2"/>
+  <text x="410" y="44" text-anchor="middle" fill="#16233B" font-size="22" font-weight="700">The three undos</text>
+  <text x="410" y="66" text-anchor="middle" fill="#5A6B85" font-family="monospace" font-size="13">each undoes a change in a different area — so I ask which area first</text>
 
-  <!-- Row 1: unstage (blue) -->
-  <rect x="40" y="86" width="740" height="54" rx="10" fill="#e7f0fb" stroke="#1971c2" stroke-width="1.5"/>
-  <circle cx="66" cy="113" r="13" fill="#1971c2"/><text x="66" y="117" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">1</text>
-  <text x="92" y="108" font-size="13" font-weight="700" fill="#1971c2" font-family="Consolas, Menlo, monospace">git restore --staged &lt;file&gt;</text>
-  <text x="92" y="127" font-size="12" fill="#57606a">unstage it — my edits stay</text>
-  <text x="756" y="117" text-anchor="end" font-size="11" fill="#6b8cae">staging → working dir</text>
+  <!-- Row 1: unstage (safe) -->
+  <rect x="50" y="90" width="720" height="58" rx="12" fill="#D9EEEB" stroke="#19857C" stroke-width="2"/>
+  <circle cx="86" cy="119" r="15" fill="#19857C"/>
+  <text x="86" y="124" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">1</text>
+  <text x="118" y="114" fill="#16233B" font-family="monospace" font-size="14" font-weight="700">git restore --staged &lt;file&gt;</text>
+  <text x="118" y="134" fill="#196E67" font-size="12">unstage it — my edits stay</text>
+  <text x="752" y="123" text-anchor="end" fill="#19857C" font-family="monospace" font-size="11" font-weight="700">staging → working · safe</text>
 
-  <!-- Row 2: discard (red) -->
-  <rect x="40" y="150" width="740" height="54" rx="10" fill="#fdecea" stroke="#b23b2e" stroke-width="1.5"/>
-  <circle cx="66" cy="177" r="13" fill="#b23b2e"/><text x="66" y="181" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">2</text>
-  <text x="92" y="172" font-size="13" font-weight="700" fill="#b23b2e" font-family="Consolas, Menlo, monospace">git restore &lt;file&gt;</text>
-  <text x="92" y="191" font-size="12" fill="#57606a">discard my edits, back to the last commit</text>
-  <text x="756" y="181" text-anchor="end" font-size="11" font-weight="700" fill="#b23b2e">⚠ can't be undone</text>
+  <!-- Row 2: discard (destructive) -->
+  <rect x="50" y="158" width="720" height="58" rx="12" fill="#F7E6D6" stroke="#DD7A38" stroke-width="2"/>
+  <circle cx="86" cy="187" r="15" fill="#DD7A38"/>
+  <text x="86" y="192" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">2</text>
+  <text x="118" y="182" fill="#16233B" font-family="monospace" font-size="14" font-weight="700">git restore &lt;file&gt;</text>
+  <text x="118" y="202" fill="#9A5A2B" font-size="12">discard my edits, back to the last commit</text>
+  <text x="752" y="191" text-anchor="end" fill="#C2410C" font-family="monospace" font-size="11" font-weight="700">⚠ can't be undone</text>
 
-  <!-- Row 3: restore old (green) -->
-  <rect x="40" y="214" width="740" height="54" rx="10" fill="#edfbf3" stroke="#1a7f52" stroke-width="1.5"/>
-  <circle cx="66" cy="241" r="13" fill="#1a7f52"/><text x="66" y="245" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3</text>
-  <text x="92" y="236" font-size="13" font-weight="700" fill="#1a7f52" font-family="Consolas, Menlo, monospace">git restore --source=&lt;commit&gt; &lt;file&gt;</text>
-  <text x="92" y="255" font-size="12" fill="#57606a">bring back how it looked at an older commit</text>
-  <text x="756" y="245" text-anchor="end" font-size="11" fill="#5a9c7e">old commit → working dir</text>
+  <!-- Row 3: restore old version -->
+  <rect x="50" y="226" width="720" height="58" rx="12" fill="#E8E2FB" stroke="#6B4FD8" stroke-width="2"/>
+  <circle cx="86" cy="255" r="15" fill="#6B4FD8"/>
+  <text x="86" y="260" text-anchor="middle" fill="#FFFFFF" font-size="15" font-weight="700">3</text>
+  <text x="118" y="250" fill="#16233B" font-family="monospace" font-size="14" font-weight="700">git restore --source=&lt;commit&gt; &lt;file&gt;</text>
+  <text x="118" y="270" fill="#5B43B0" font-size="12">bring back how it looked at an older commit</text>
+  <text x="752" y="259" text-anchor="end" fill="#6B4FD8" font-family="monospace" font-size="11" font-weight="700">old commit → working</text>
 
-  <!-- summary bar -->
-  <rect x="40" y="278" width="740" height="30" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
-  <text x="410" y="298" text-anchor="middle" font-size="12.5" fill="#1f2328">The question is always: <tspan font-weight="700" fill="#1971c2">which area am I undoing in?</tspan></text>
+  <!-- bottom bar -->
+  <rect x="50" y="298" width="720" height="30" rx="8" fill="#F6F8FA" stroke="#E7EBF1" stroke-width="1.5"/>
+  <text x="410" y="318" text-anchor="middle" fill="#16233B" font-size="12.5">The question is always: <tspan fill="#1971c2" font-weight="700">which area am I undoing in?</tspan></text>
 </svg>

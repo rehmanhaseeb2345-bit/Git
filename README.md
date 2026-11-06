@@ -2,134 +2,86 @@
 
 <img src="assets/banner.svg" alt="Git Notes" width="100%">
 
-<br><br>
-
-![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Sections](https://img.shields.io/badge/sections-11-blue?style=for-the-badge)
-![Progress](https://img.shields.io/badge/written-11%20%2F%2011-brightgreen?style=for-the-badge)
-
 </div>
 
-## 👋 About these notes
+## About these notes
 
-My notes on Git and GitHub, from `git init` to interactive rebase, written as I learned the tool.
+My notes on Git and GitHub, from `git init` to interactive rebase, written as I learned the tool and kept in the order it finally made sense to me.
 
-I keep them for two reasons:
-
-- **A reference for myself** — when I forget a flag or how something works, I check here before I google it.
-- **A record of what I've learned** — snapshots, branching, the fork workflow, rewriting history, and getting out of mistakes.
+They're really for one person: future me. When I haven't touched a command in a while, I open the right page here and follow along until it's back in my head. So the pages go deep on purpose — I'd rather have the detail and not need it than come back in six months and find a summary that assumes I remember the rest.
 
 > [!NOTE]
-> **Every command's output here is real.** Git runs on my own machine (Linux Mint), so I actually ran everything you see — the output is what my terminal printed, not made up.
+> **Every command's output on these pages is real.** Git runs on my own machine (Linux Mint), so I actually ran everything shown — the output is what my terminal printed, not something I made up to illustrate a point.
 
-These are student notes, written as I go. If you spot a mistake, open an issue — I'd like to fix it.
+If you're not me and you found these useful, great — and if you spot a mistake, open an issue, I'd like to fix it.
 
-## 🗺️ What's covered
+## What's covered
 
-**Progress:** `███████████████████████████` 11 / 11 — complete ✅
-&nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
+Each part builds on the one before it, so read top to bottom the first time; after that, jump straight to whatever you came for.
 
 ### Part 1 — Foundations
 
-What Git is and how it thinks, before any command.
+| # | Section | What's inside |
+|:-:|---|---|
+| 01 | [What is Git](01-what-is-git/README.md) | Version control, centralized vs distributed, snapshots (not diffs), install & config |
 
-| # | Section | What's inside | Status |
-|:-:|---|---|:-:|
-| 01 | [What is Git](01-what-is-git/README.md) | VCS, centralized vs distributed, snapshots not diffs, install & config | ✅ |
+### Part 2 — The everyday workflow
 
-### Part 2 — The Core Workflow
+| # | Section | What's inside |
+|:-:|---|---|
+| 02 | [Creating Snapshots](02-creating-snapshots/README.md) | `init`, the three areas, `add`/`commit`, the commit object, atomic commits |
+| 03 | [Inspecting & Undoing](03-inspecting-and-undoing/README.md) | `diff` vs `--staged`, `rm --cached` + `.gitignore`, `mv`, the three undos |
 
-The everyday loop: snapshotting your project, and undoing when needed.
+### Part 3 — Browsing history
 
-| # | Section | What's inside | Status |
-|:-:|---|---|:-:|
-| 02 | [Creating Snapshots](02-creating-snapshots/README.md) | `init`, the three areas, `add`/`commit`, the commit object, atomic commits | ✅ |
-| 03 | [Inspecting & Undoing](03-inspecting-and-undoing/README.md) | `diff` vs `--staged`, `rm --cached` + `.gitignore`, `mv`, the three undos | ✅ |
+| # | Section | What's inside |
+|:-:|---|---|
+| 04 | [Reading & Filtering History](04-reading-and-filtering-history/README.md) | Shaping `log`, `--author`/`--grep`/`-S`, commit ranges, aliases |
+| 05 | [Investigating History](05-investigating-history/README.md) | `HEAD~n`, detached HEAD, `bisect`, `blame`, restoring deleted files, tags |
 
-### Part 3 — Browsing History
+### Part 4 — Branching & merging
 
-Finding what you need in history, and tracking down when something changed.
+| # | Section | What's inside |
+|:-:|---|---|
+| 06 | [Branches](06-branches/README.md) | Branches as movable pointers, create/switch/delete, compare, stash |
+| 07 | [Merging](07-merging/README.md) | Fast-forward vs 3-way, conflicts, squash, rebase, cherry-pick |
 
-| # | Section | What's inside | Status |
-|:-:|---|---|:-:|
-| 04 | [Reading & Filtering History](04-reading-and-filtering-history/README.md) | `log` shaping, `--author`/`--grep`/`-S`, ranges, aliases | ✅ |
-| 05 | [Investigating History](05-investigating-history/README.md) | `HEAD~n`, detached HEAD, `bisect`, `blame`, restoring deleted files, tags | ✅ |
+### Part 5 — Working with other people
 
-### Part 4 — Branching & Merging
+| # | Section | What's inside |
+|:-:|---|---|
+| 08 | [Remotes & GitHub](08-remotes-and-github/README.md) | `origin/main`, clone/fetch/pull/push, SSH, the rejected-push fix |
+| 09 | [Pull Requests & Open Source](09-pull-requests-and-open-source/README.md) | PRs, issues/labels/milestones, the fork → upstream → PR flow |
 
-Parallel work, and bringing it back together.
+### Part 6 — Rewriting history
 
-| # | Section | What's inside | Status |
-|:-:|---|---|:-:|
-| 06 | [Branches](06-branches/README.md) | Branches as movable pointers, create/switch/delete, compare, stash | ✅ |
-| 07 | [Merging](07-merging/README.md) | Fast-forward vs 3-way, conflicts, squash, rebase, cherry-pick | ✅ |
-
-### Part 5 — Collaboration
-
-Working with a remote, and with other people.
-
-| # | Section | What's inside | Status |
-|:-:|---|---|:-:|
-| 08 | [Remotes & GitHub](08-remotes-and-github/README.md) | `origin/main`, clone/fetch/pull/push, SSH, the rejected-push fix | ✅ |
-| 09 | [Pull Requests & Open Source](09-pull-requests-and-open-source/README.md) | PRs, issues/labels/milestones, the fork → upstream → PR flow | ✅ |
-
-### Part 6 — Rewriting History
-
-Cleaning up before you share, and getting out of any mistake.
-
-| # | Section | What's inside | Status |
-|:-:|---|---|:-:|
-| 10 | [Rewriting History](10-rewriting-history/README.md) | The Golden Rule, `reflog`, `reset`, `revert`, `amend`, interactive rebase | ✅ |
+| # | Section | What's inside |
+|:-:|---|---|
+| 10 | [Rewriting History](10-rewriting-history/README.md) | The golden rule, `reflog`, `reset`, `revert`, `amend`, interactive rebase |
 
 ### Appendix
 
-| Section | What's inside | Status |
-|---|---|:-:|
-| [⛑ Recovery Guide — I Screwed Up, Now What?](appendix-recovery/README.md) | Symptom → fix for every common disaster, tagged safe vs shared-history care | ✅ |
-
-## 🧭 How every page is structured
-
-Each topic uses the same layout, so the notes read the same way throughout (full template in [TEMPLATE.md](TEMPLATE.md)):
-
-| Part | What it covers |
+| Section | What's inside |
 |---|---|
-| **What it is** | A plain-English definition |
-| **Why it exists** | The problem it solves |
-| **Key points** | The core ideas, broken down, with real commands |
-| **Visual** | A hand-made SVG diagram, plus Mermaid where it helps |
-| **⚠️ Watch out** | Common mistakes and misconceptions |
-| **🔧 Fix it** | The recovery one-liner for that topic |
-| **🧪 Try it** | A small exercise, with the answer in a dropdown |
-| **🤔 What confused me** | The thing that tripped me up |
+| [Recovery — I screwed up, now what?](appendix-recovery/README.md) | Symptom → fix for every common disaster, marked safe vs needs-care on shared history |
 
-## 📁 Repo layout
+## How the pages are written
+
+Plain English, short sentences, the way I'd explain it to a friend. Every command sits in a code block with its real output underneath, the one idea worth remembering is in **bold**, and most pages end with a short note on whatever actually tripped me up — because the thing that confused me once will probably confuse me again.
+
+Diagrams are a mix of hand-made **SVG** for the bigger pictures and **Mermaid** (which GitHub renders natively) for the smaller flows. There's also a one-page [CHEATSHEET](CHEATSHEET.md) for when I just need the command and not the explanation.
+
+## Repo layout
 
 ```
 Git/
 ├── README.md          ← you are here
-├── TEMPLATE.md        ← the structure every page follows
 ├── CHEATSHEET.md      ← one-page command reference
 ├── assets/            ← the banner
 ├── 01-what-is-git/
 │   ├── README.md      ← the notes (GitHub opens this automatically)
-│   └── images/        ← the hand-made diagram for this section
+│   └── images/        ← the diagrams for this section
 ├── 02-creating-snapshots/
-├── 03-inspecting-and-undoing/
-├── 04-reading-and-filtering-history/
-├── 05-investigating-history/
-├── 06-branches/
-├── 07-merging/
-├── 08-remotes-and-github/
-├── 09-pull-requests-and-open-source/
-├── 10-rewriting-history/   ← each with its own README.md + images/
-└── appendix-recovery/      ← the "I screwed up, now what?" guide
+│   └── … each section is its own folder, same shape
+└── appendix-recovery/ ← the "I screwed up, now what?" guide
 ```
-
----
-
-<div align="center">
-
-Made while learning, one commit at a time. 📸 → 🌿 → ☁️ → ⏪
-
-</div>

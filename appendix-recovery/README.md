@@ -1,16 +1,10 @@
-<div align="center">
+# Recovery — I screwed up, now what?
 
-# ⛑ Recovery Guide — I Screwed Up, Now What?
+> The page I reach for when something goes wrong at the terminal: find the disaster, run the fix. Every answer traces back to one question — **has it been shared yet?** — because that decides whether I can rewrite it or have to undo it with a new commit.
 
-**Appendix** · ✅ Done
+### Find your disaster
 
-</div>
-
-> The page I reach for when something goes wrong at the terminal. Find the disaster, run the fix. Every answer traces back to one question: **has it been shared yet?** — because that decides whether I can rewrite it or have to undo it with a new commit.
-
-### 📌 Find your disaster
-
-| Symptom | Jump to | Tag |
+| Symptom | Jump to | |
 |---|---|:-:|
 | Changed a file, want the saved version back | [Discard uncommitted changes](#discard-uncommitted-changes) | 🟢 |
 | Need to switch branch mid-edit | [Stash work in progress](#stash-work-in-progress) | 🟢 |
@@ -25,28 +19,13 @@
 
 🟢 safe · 🟡 careful, read the note · 🔴 touches shared history — handle with care
 
-<p align="center"><img src="images/recovery-map.svg" alt="Recovery triage: where did the mistake get to — still uncommitted, committed but not pushed, already pushed, or seemingly lost — each pointing to its safe fix" width="820"></p>
-
----
-
 ## The one rule
 
-Everything below is just this picture applied to a specific mess:
+Every fix below is really just this one picture applied to a specific mess — figure out how far the mistake travelled, and the safe fix follows:
 
-```mermaid
-flowchart TD
-  S{"Did I push it<br/>already?"}
-  S -->|"not yet"| L{"Is it committed?"}
-  L -->|"no, just edits"| E["restore · stash · clean"]
-  L -->|"yes, local commit"| C["amend · reset · rebase -i"]
-  S -->|"yes, it's shared"| R["revert — a new undo commit<br/>never reset/rebase shared history"]
-  style S fill:#f6f8fa,stroke:#8a93a0,stroke-width:1.5px,color:#1f2328
-  style L fill:#f6f8fa,stroke:#8a93a0,stroke-width:1.5px,color:#1f2328
-  style E fill:#e7f0fb,stroke:#1971c2,stroke-width:1.5px,color:#1971c2
-  style C fill:#fff7ed,stroke:#c2410c,stroke-width:1.5px,color:#c2410c
-  style R fill:#edfbf3,stroke:#1a7f52,stroke-width:2px,color:#1a7f52
-  linkStyle default stroke:#8a93a0,stroke-width:1.5px
-```
+![Recovery triage: still uncommitted, committed but not pushed, already pushed, or seemingly lost — each pointing to its safe fix](images/recovery-map.svg)
+
+The split that matters most: once something has been **pushed and shared**, I stop rewriting it and switch to `revert`, which undoes it with a *new* commit instead of altering history everyone else already has.
 
 ---
 
@@ -62,8 +41,7 @@ git restore .             # everything in the working dir
 # file is back to its committed state
 ```
 
-> [!NOTE]
-> `git restore` replaced the old `git checkout -- <file>` for this job. Both still work, but `restore` is the clearer, newer name. It only touches my **working files** — committed history is untouched.
+`git restore` replaced the old `git checkout -- <file>` for this job. Both still work, but `restore` is the clearer name, and it only touches my **working files** — committed history is untouched.
 
 ### Stash work in progress
 
@@ -81,7 +59,7 @@ git stash pop             # re-apply and remove from the stash
 
 ### Clean untracked files
 
-New files Git isn't tracking yet, cluttering `git status`. **Always dry-run first:**
+New files Git isn't tracking yet, cluttering `git status`. I always dry-run first:
 
 ```bash
 git clean -n              # -n = dry run, just shows what WOULD go
@@ -89,8 +67,7 @@ git clean -n              # -n = dry run, just shows what WOULD go
 git clean -f              # -f = actually delete them
 ```
 
-> [!WARNING]
-> `git clean -f` permanently deletes untracked files — they were never in Git, so there's **no reflog, no recovery.** The `-n` dry run exists precisely so I never run `-f` blind.
+`git clean -f` permanently deletes untracked files — they were never in Git, so there's **no reflog, no recovery.** The `-n` dry run exists precisely so I never run `-f` blind.
 
 ---
 
@@ -104,7 +81,7 @@ git commit --amend -m "The message I meant to write"
 
 ### Add a forgotten file
 
-Stage what I missed, then fold it into the last commit without a new one:
+Stage what I missed, then fold it into the last commit without making a new one:
 
 ```bash
 git add forgotten.txt
@@ -138,8 +115,7 @@ git reset --hard HEAD~1     # move main back (the commit is safe on feature-x)
 git switch feature-x        # my work is here
 ```
 
-> [!NOTE]
-> This is safe because `git branch feature-x` saves the commit's hash *before* I move `main`. Nothing is deleted — I'm just relabelling where each branch points. Only do it while the commit is still local.
+This is safe because `git branch feature-x` saves the commit's hash *before* I move `main` — nothing is deleted, I'm just relabelling where each branch points. Only do it while the commit is still local.
 
 ---
 
@@ -156,8 +132,7 @@ git reflog
 git reset --hard 0f252ec    # jump back to it
 ```
 
-> [!TIP]
-> This also rescues a branch I deleted by mistake, a botched rebase, or a bad merge. **Reflog first, panic never.** Entries stick around for ~90 days by default, so there's plenty of time.
+This also rescues a branch I deleted by mistake, a botched rebase, or a bad merge. **Reflog first, panic never** — entries stick around for ~90 days by default, so there's plenty of time.
 
 ---
 
@@ -165,7 +140,7 @@ git reset --hard 0f252ec    # jump back to it
 
 ### Revert a shared commit
 
-The commit is on GitHub and teammates may have it. **I do not reset or rebase it** — that rewrites shared history and collides with everyone. Instead I add a new commit that undoes it:
+The commit is on GitHub and teammates may have it. I **do not** reset or rebase it — that rewrites shared history and collides with everyone. Instead I add a new commit that undoes it:
 
 ```bash
 git revert <commit>        # creates "Revert ..." — cancels the change
@@ -185,41 +160,11 @@ echo "secrets.env" >> .gitignore
 git commit -m "Stop tracking secrets.env"
 ```
 
-> [!WARNING]
-> `rm --cached` + a new commit stops *future* exposure, but the secret is **still in the old commits**. Purging it from all history needs a history rewrite (`git filter-repo` or the BFG) and a force-push — which breaks everyone's clone. That's why **rotating the key is the real fix**; history cleanup is secondary.
+`rm --cached` + a new commit stops *future* exposure, but the secret is **still in the old commits**. Purging it from all history needs a history rewrite (`git filter-repo` or the BFG) and a force-push, which breaks everyone's clone. That's why **rotating the key is the real fix**; history cleanup is secondary.
 
 ---
 
-## 🧪 Try it
-
-> Create a repo, make a commit, then stage and commit a fake `secret.txt`. Practice the recovery: `git rm --cached secret.txt`, add it to `.gitignore`, and commit. Then separately, make a commit, `reset --hard` past it, and bring it back with `reflog`.
-
-<details>
-<summary>Show the answer</summary>
-
-```bash
-git init -b main
-echo "key=123" > secret.txt && git add . && git commit -m "oops secret"
-git rm --cached secret.txt
-echo "secret.txt" >> .gitignore
-git commit -m "Stop tracking secret.txt"
-
-echo "real work" > w.txt && git add . && git commit -m "work"
-LOST=$(git rev-parse HEAD)
-git reset --hard HEAD~1       # "lost" it
-git reflog                    # find it
-git reset --hard $LOST        # back again
-```
-
-</details>
-
-## 🤔 What confused me
-
-> That there isn't one universal "undo" in Git. I kept looking for a `git undo`, but the right fix depends entirely on *how far the mistake travelled* — a working-file edit, a local commit, or something I've already pushed each have a different safe answer. Once I started every recovery by asking "did I push it yet?", the whole mess sorted itself into the four lanes on the map above.
-
----
-
-**One-line recap:** start every recovery with **"has it been shared?"** Uncommitted → `restore`/`stash`/`clean`. Local commit → `amend`/`reset`/`rebase`. Pushed → `revert`, never reset. Lost → `reflog`. Secrets → rotate first, then stop tracking.
+**What tripped me up:** that there isn't one universal "undo" in Git. I kept looking for a `git undo`, but the right fix depends entirely on *how far the mistake travelled* — a working-file edit, a local commit, or something I've already pushed each have a different safe answer. Once I started every recovery by asking "did I push it yet?", the whole mess sorted itself into the four lanes on the map above.
 
 ---
 

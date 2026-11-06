@@ -1,40 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="820" height="296" viewBox="0 0 820 296" font-family="Segoe UI, Helvetica, Arial, sans-serif">
-  <rect x="1" y="1" width="818" height="294" rx="16" fill="#ffffff" stroke="#d0d7de"/>
-  <text x="40" y="40" font-size="21" font-weight="700" fill="#1f2328">The three areas</text>
-  <text x="40" y="64" font-size="14" fill="#57606a">Every change moves through three places — and two commands move it along.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" font-family="'Segoe UI',system-ui,-apple-system,Roboto,sans-serif">
+  <rect x="1" y="1" width="818" height="368" rx="18" fill="#FFFFFF" stroke="#DDE3EC" stroke-width="2"/>
+  <text x="410" y="44" text-anchor="middle" fill="#16233B" font-size="22" font-weight="700">The three areas</text>
+  <text x="410" y="66" text-anchor="middle" fill="#5A6B85" font-family="monospace" font-size="13">almost every command just moves a change between these three</text>
+
+  <!-- Box 1: Working directory -->
+  <rect x="50" y="118" width="200" height="140" rx="12" fill="#FBFCFD" stroke="#DDE3EC" stroke-width="2"/>
+  <text x="150" y="146" text-anchor="middle" fill="#16233B" font-size="15" font-weight="700">Working directory</text>
+  <text x="150" y="166" text-anchor="middle" fill="#5A6B85" font-family="monospace" font-size="11">my files — where I edit</text>
+  <rect x="118" y="182" width="64" height="56" rx="6" fill="#FFFFFF" stroke="#9AA3AF" stroke-width="1.6"/>
+  <line x1="130" y1="198" x2="170" y2="198" stroke="#C4CBD4" stroke-width="3"/>
+  <line x1="130" y1="210" x2="170" y2="210" stroke="#C4CBD4" stroke-width="3"/>
+  <line x1="130" y1="222" x2="158" y2="222" stroke="#C4CBD4" stroke-width="3"/>
+
+  <!-- Box 2: Staging area -->
+  <rect x="310" y="118" width="200" height="140" rx="12" fill="#F7E6D6" stroke="#DD7A38" stroke-width="2"/>
+  <text x="410" y="146" text-anchor="middle" fill="#16233B" font-size="15" font-weight="700">Staging area</text>
+  <text x="410" y="166" text-anchor="middle" fill="#9A5A2B" font-family="monospace" font-size="11">what goes in the next commit</text>
+  <rect x="378" y="182" width="64" height="56" rx="6" fill="#FFFFFF" stroke="#DD7A38" stroke-width="1.6"/>
+  <line x1="390" y1="198" x2="430" y2="198" stroke="#E7A877" stroke-width="3"/>
+  <line x1="390" y1="210" x2="430" y2="210" stroke="#E7A877" stroke-width="3"/>
+  <line x1="390" y1="222" x2="418" y2="222" stroke="#E7A877" stroke-width="3"/>
+
+  <!-- Box 3: Repository -->
+  <rect x="570" y="118" width="200" height="140" rx="12" fill="#D9EEEB" stroke="#19857C" stroke-width="2"/>
+  <text x="670" y="146" text-anchor="middle" fill="#16233B" font-size="15" font-weight="700">Repository (.git)</text>
+  <text x="670" y="166" text-anchor="middle" fill="#196E67" font-family="monospace" font-size="11">the permanent history</text>
+  <rect x="632" y="188" width="56" height="48" rx="6" fill="#FFFFFF" stroke="#19857C" stroke-width="1.5"/>
+  <rect x="644" y="182" width="56" height="48" rx="6" fill="#FFFFFF" stroke="#19857C" stroke-width="1.5"/>
+  <rect x="656" y="176" width="56" height="48" rx="6" fill="#EFFaf7" stroke="#19857C" stroke-width="1.6"/>
+  <circle cx="670" cy="200" r="5" fill="#19857C"/>
+  <line x1="682" y1="200" x2="702" y2="200" stroke="#7Fc3b6" stroke-width="3"/>
+
+  <!-- arrows -->
+  <path d="M258 188 L302 188" stroke="#5A6B85" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="280" y="176" text-anchor="middle" fill="#DD7A38" font-family="monospace" font-size="12" font-weight="700">git add</text>
+  <path d="M518 188 L562 188" stroke="#5A6B85" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="540" y="176" text-anchor="middle" fill="#19857C" font-family="monospace" font-size="12" font-weight="700">git commit</text>
+
+  <!-- bottom caption -->
+  <text x="410" y="306" text-anchor="middle" fill="#5A6B85" font-size="13">I edit in the working directory · <tspan fill="#DD7A38" font-weight="700">git add</tspan> puts changes in the box · <tspan fill="#19857C" font-weight="700">git commit</tspan> seals them into history</text>
+  <text x="410" y="336" text-anchor="middle" fill="#9AA3AF" font-size="12">and git restore pulls a change back the other way — undo lives in section 03</text>
 
   <defs>
-    <marker id="ar" markerWidth="10" markerHeight="10" refX="7.5" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#1971c2"/>
-    </marker>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5A6B85"/></marker>
   </defs>
-
-  <!-- working directory -->
-  <rect x="46" y="92" width="206" height="104" rx="12" fill="#e7f0fb" stroke="#1971c2" stroke-width="1.6"/>
-  <text x="149" y="126" text-anchor="middle" font-size="15" font-weight="700" fill="#1971c2">Working Directory</text>
-  <text x="149" y="150" text-anchor="middle" font-size="12" fill="#57606a">my files — where I edit</text>
-  <text x="149" y="169" text-anchor="middle" font-size="11.5" fill="#6b8cae">everything I'm working on</text>
-
-  <!-- staging area -->
-  <rect x="307" y="92" width="206" height="104" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="1.6"/>
-  <text x="410" y="126" text-anchor="middle" font-size="15" font-weight="700" fill="#c2410c">Staging Area</text>
-  <text x="410" y="150" text-anchor="middle" font-size="12" fill="#57606a">what's going in</text>
-  <text x="410" y="169" text-anchor="middle" font-size="11.5" fill="#b07a52">my next commit</text>
-
-  <!-- repository -->
-  <rect x="568" y="92" width="206" height="104" rx="12" fill="#edfbf3" stroke="#1a7f52" stroke-width="1.6"/>
-  <text x="671" y="126" text-anchor="middle" font-size="15" font-weight="700" fill="#1a7f52">Repository</text>
-  <text x="671" y="150" text-anchor="middle" font-size="12" fill="#57606a">the .git folder</text>
-  <text x="671" y="169" text-anchor="middle" font-size="11.5" fill="#5a9c7e">permanent history</text>
-
-  <!-- arrows + command labels -->
-  <text x="279" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#1971c2" font-family="Consolas, Menlo, monospace">git add</text>
-  <line x1="254" y1="144" x2="303" y2="144" stroke="#1971c2" stroke-width="2" marker-end="url(#ar)"/>
-
-  <text x="540" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#1971c2" font-family="Consolas, Menlo, monospace">git commit</text>
-  <line x1="515" y1="144" x2="564" y2="144" stroke="#1971c2" stroke-width="2" marker-end="url(#ar)"/>
-
-  <!-- summary bar -->
-  <rect x="40" y="226" width="740" height="46" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
-  <text x="56" y="254" font-size="12.5" fill="#1f2328">Edit in the <tspan font-weight="700" fill="#1971c2">working directory</tspan> · stage just what I want in the <tspan font-weight="700" fill="#c2410c">staging area</tspan> · then <tspan font-weight="700" fill="#1a7f52">commit</tspan> it into history.</text>
 </svg>

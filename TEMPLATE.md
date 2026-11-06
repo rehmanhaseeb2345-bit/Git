@@ -1,78 +1,52 @@
-# My page template
+# How I write each page
 
-I copy this structure for every new topic, so every page in these notes reads the same way. It's the same template I use across my other notes repos, with two tweaks for a command-heavy tool like Git (marked 🆕).
+A note to myself so every page in these notes reads the same way. It's deliberately light — the structure should stay out of the way of the content.
 
-## The structure
+## The shape of a page
 
-````markdown
-<div align="center">
-
+```markdown
 # NN · Section Title
 
-**Part X — Name** · ✅ Done
+> A short, personal intro: where this fits and why I care about it.
 
-</div>
+**On this page:** [topic](#topic) · [topic](#topic) · [topic](#topic)
 
-> A short, personal intro: where this fits and why it matters.
+---
 
-### 📌 What's in here
-<!-- a small table linking to each topic on the page -->
+## A plain descriptive heading
+Prose in my own words. When a diagram helps, it goes **right after the paragraph
+that introduces the idea** — not parked at the top or dumped at the end.
 
-<p align="center"><img src="images/hero.svg" alt="..." width="820"></p>
+![alt text that says what the diagram shows](images/thing.svg)
 
-## 1. What it is
-Plain-English definition. One or two sentences.
+More prose. Every command sits in a code block with its **real output** underneath.
 
-## 2. Why it exists
-The problem it solves.
+## The next idea
+...
 
-## 3. Key points
-The core ideas, broken into small labelled chunks, with tables where they help.
-Every command shown in a `code block` **with its real output**.
+---
 
-## Visual
-A hand-made SVG in images/ for the hero; Mermaid (flowchart / gitGraph) for supporting diagrams.
+**What tripped me up:** the one thing that genuinely confused me on this topic,
+in my own words — only when there was a real one.
 
-## ⚠️ Watch out
-Bullets of mistakes and misconceptions.
+---
 
-## 🔧 Fix it   🆕
-One line: "if you hit this, run that." The recovery reflex for this topic.
+[⬅ previous](../NN/README.md) · [🏠 Index](../README.md) · [next ➡](../NN/README.md)
+```
 
-## 🧪 Try it
-A small exercise, with the answer in a <details> block.
+## The rules I hold myself to
 
-## 🤔 What confused me
-The thing that tripped me up, in a quote block, so future-me remembers.
+- **Plain English, short sentences** — the way I'd explain it to a friend.
+- **All output is real.** Git runs on my own machine, so every command's output shown is what my terminal actually printed, never illustrative.
+- **Depth over brevity.** These are my relearn-from-it notes, so I keep the detail — I'd rather have it and not need it.
+- **Write for future me**, not for a stranger taking a course. First person, honest about what confused me.
+- **No fixed ritual.** I only add a note, a gotcha, or a "what tripped me up" when the page actually has one — I don't force the same sections onto every page.
+- **One idea in bold** per section, commands in `code`.
 
-**One-line recap:** the whole page in a sentence.
+## The diagrams
 
-<!-- nav footer: previous · index · next -->
-````
+A hand-made **SVG** for the bigger pictures, **Mermaid** (which GitHub renders natively) for smaller flows. All of them share one visual language so the repo looks like one set:
 
-## My rules for writing
-
-- Plain English and short sentences, the way I'd explain it to a friend.
-- One consistent structure on every page.
-- **🆕 All output is real.** Git runs on my own machine, so every command's output
-  shown is what my terminal actually printed — never illustrative. (That's the
-  whole point of a Git notes repo: I can test everything.)
-- **🆕 Every page carries a `🔧 Fix it`** line — the recovery move for that topic —
-  so the "get out of trouble" theme runs through the whole repo, not just the
-  recovery appendix.
-- Diagrams render on GitHub: a hand-made **SVG** for the hero, **Mermaid**
-  (`flowchart`, `gitGraph`) for supporting visuals.
-- Commands in `code`, the one idea to remember in **bold**.
-- Every page ends with **What confused me** — the honest part.
-
-## The diagram style (so every SVG matches)
-
-- Canvas `width="820"`, rounded white frame (`rx=16`, stroke `#d0d7de`), title
-  (21px bold `#1f2328`) + plain subtitle (14px `#57606a`) at top-left.
-- Semantic colors, used consistently: blue `#1971c2`/`#e7f0fb` (primary/you/main),
-  purple `#8b5cf6`/`#f3e8ff` (distinct actor/remote), orange `#c2410c`/`#fff7ed`
-  (feature/caution), green `#1a7f52`/`#edfbf3` (destination/success/merge), amber
-  `#f59e0b` (callout).
-- `#1971c2` arrows (shared marker); dashed grey for return/parent paths; a
-  `#f6f8fa` **summary bar** along the bottom with an UPPERCASE label and colored
-  `<tspan>`s tying back to the boxes.
+- Canvas ~820–900 wide, rounded white frame (`rx=18`, stroke `#DDE3EC`), a centered bold navy title (`#16233B`) with a monospace grey subtitle (`#5A6B85`) beneath.
+- Shared palette, used consistently: teal `#19857C` / `#D9EEEB` (primary / safe / committed), terracotta `#DD7A38` / `#F7E6D6` (in-progress / caution / feature), purple `#6B4FD8` / `#E8E2FB` (a distinct actor — remote, HEAD), neutral grey `#9AA3AF` / `#F3F4F6` (inert), navy for text.
+- Monospace for anything code-like (hashes, flags, labels); simple grey arrows (`#5A6B85`).

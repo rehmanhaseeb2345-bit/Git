@@ -1,32 +1,14 @@
-<div align="center">
-
 # 02 · Creating Snapshots
 
-**Part 2 — The Core Workflow** · ✅ Done
+> The loop I run all day: turn a folder into a repo, move changes through three areas, and seal them into a commit. Once the three areas clicked for me, most of the rest of Git stopped feeling random.
 
-</div>
-
-> The loop I run all day: turn a folder into a repo, move my changes through three areas, and save them as a commit. Once the three areas click, most of Git makes sense.
-
-### 📌 What's in here
-
-| # | Topic | In one line |
-|:-:|---|---|
-| 1 | [Start a repo](#1-start-a-repo--git-init) | `git init` and the `.git` folder |
-| 2 | [The three areas](#2-the-three-areas) | Working dir → staging → repo |
-| 3 | [Stage changes](#3-stage-changes--git-add--git-status) | `git add` and reading `git status` |
-| 4 | [Save a snapshot](#4-save-a-snapshot--git-commit) | `git commit` and what a commit holds |
-| 5 | [Good commits](#5-good-commits) | Small, with a clear message |
-| 6 | [The `-am` shortcut](#6-the--am-shortcut) | Stage + commit in one (watch the trap) |
-| ✔ | [Watch out](#-watch-out) · [Fix it](#-fix-it) · [Try it](#-try-it) · [What confused me](#-what-confused-me) | |
-
-<p align="center"><img src="images/three-areas.svg" alt="A change moves from the working directory to staging with git add, then into the repository with git commit" width="820"></p>
+**On this page:** [git init](#starting-a-repo) · [the three areas](#the-three-areas) · [staging](#staging-changes) · [committing](#saving-a-snapshot) · [good commits](#what-makes-a-good-commit) · [the -am shortcut](#the--am-shortcut)
 
 ---
 
-## 1. Start a repo — `git init`
+## Starting a repo
 
-I turn any folder into a repo by running one command inside it:
+I turn any folder into a repo with one command inside it:
 
 ```bash
 cd ~/myproject
@@ -34,31 +16,24 @@ git init
 # Initialized empty Git repository in ~/myproject/.git/
 ```
 
-That makes a hidden `.git` folder. **That folder is the repo** — every commit and all the history live inside it. My actual files just sit next to it:
+That makes a hidden `.git` folder, and **that folder is the repo** — every commit and all the history live inside it. My actual files just sit next to it:
 
 ```bash
 ls -a          # the . prefix means hidden on Linux
 # .  ..  .git  README.md  app.py
 ```
 
-> [!NOTE]
-> Delete `.git` and I delete the **whole history** — the folder becomes an ordinary folder again. I also only run `git init` **once** per project; a repo I cloned is already a repo.
+Two things I had to burn in early: deleting `.git` deletes the **whole history** (the folder goes back to being an ordinary folder), and I only run `git init` **once** per project — a repo I cloned is already a repo.
 
-## 2. The three areas
+## The three areas
 
-Almost every command just moves a change between three places. This is the one picture to keep in my head (it's the diagram up top):
+Almost every Git command just moves a change between three places, and this is the picture I keep in my head for all of it:
 
-- **Working directory** — my actual files, where I edit.
-- **Staging area** — a holding area for the changes I want in my *next* commit.
-- **Repository** (`.git`) — the permanent history.
+![A change moves from the working directory into staging with git add, then into the repository with git commit](images/three-areas.svg)
 
-`git add` moves a change from the working directory into staging. `git commit` saves everything staged into the repository.
+`git add` moves a change from the working directory into staging; `git commit` saves everything staged into the repository. The way it finally made sense to me is packing a box: my desk is the working directory (everything out, mid-work), the box is staging (I put in only what belongs in *this* shipment), and taping it shut and labelling it is the commit. The staging area is the part that's easy to overlook, but it's the whole reason I can pick exactly which changes go into a commit instead of saving everything at once.
 
-🗣️ Like packing a box: my desk is the working directory (everything out, mid-work), the box is the staging area (I put in only what belongs in *this* shipment), and taping it shut and labelling it is the commit (now it's a sealed record).
-
-The staging area is the part that's easy to overlook but worth getting: it lets me pick **exactly which changes go into a commit**, instead of saving everything at once.
-
-## 3. Stage changes — `git add` & `git status`
+## Staging changes
 
 `git status` is the command I run constantly — it tells me where everything stands:
 
@@ -78,7 +53,7 @@ git add app.py style.css   # a few, by name
 git add .                  # everything changed here and below
 ```
 
-The short status (`-s`) is quicker to read. Left column = staging, right column = the working directory:
+The short status (`-s`) is quicker to read — left column is staging, right column is the working directory:
 
 ```bash
 git status -s
@@ -86,7 +61,7 @@ git status -s
 # ?? app.py        <- untracked
 ```
 
-A file moves through these states, and `git status` always tells me which one it's in:
+A file moves through a handful of states, and `git status` always tells me which one it's in:
 
 ```mermaid
 flowchart LR
@@ -94,17 +69,16 @@ flowchart LR
   S -->|git commit| C["committed<br/>in history"]
   C -->|I edit it| M["modified"]
   M -->|git add| S
-  style U fill:#f6f8fa,stroke:#8a93a0,stroke-width:1.5px,color:#57606a
-  style S fill:#fff7ed,stroke:#c2410c,stroke-width:1.5px,color:#b45309
-  style M fill:#fdf0e6,stroke:#c2410c,stroke-width:1.5px,color:#b45309
-  style C fill:#edfbf3,stroke:#1a7f52,stroke-width:2px,color:#1a7f52
-  linkStyle default stroke:#1971c2,stroke-width:1.5px
+  style U fill:#F3F4F6,stroke:#9AA3AF,stroke-width:1.5px,color:#5A6B85
+  style S fill:#F7E6D6,stroke:#DD7A38,stroke-width:1.5px,color:#9A5A2B
+  style M fill:#F7E6D6,stroke:#DD7A38,stroke-width:1.5px,color:#9A5A2B
+  style C fill:#D9EEEB,stroke:#19857C,stroke-width:2px,color:#196E67
+  linkStyle default stroke:#9AA3AF,stroke-width:1.5px
 ```
 
-> [!NOTE]
-> In `git status`, **red** = not staged yet, **green** = staged. Red isn't an error — it just means "not in the box yet."
+In `git status`, red means not staged yet and green means staged. Red isn't an error — it just means "not in the box yet."
 
-## 4. Save a snapshot — `git commit`
+## Saving a snapshot
 
 `git commit` takes everything staged and seals it into history. `-m` gives the message inline:
 
@@ -116,79 +90,28 @@ git log --oneline
 # 92a6119 Initial commit
 ```
 
-That `92a6119` is the commit's **hash** — a unique fingerprint. Each commit stores four things: a **snapshot** of my files, a link to its **parent** commit (that's what chains history together), my **name and the time**, and my **message**. Change any of that and the hash changes — which is why history can't be quietly edited.
+That `92a6119` is the commit's **hash**, a unique fingerprint. Each commit stores four things: a snapshot of my files, a link to its **parent** commit (that's what chains history together), my name and the time, and my message. Change any of it and the hash changes — which is why history can't be quietly edited. (Plain `git commit` with no `-m` drops me into an editor; if it's Vim, `Esc` then `:wq` escapes — I just use `-m` to avoid the whole thing.)
 
-## 5. Good commits
+## What makes a good commit
 
-Two habits that make history worth having:
+Two habits that make the history actually worth having:
 
-- **One commit = one thing.** Don't bundle a bug fix, a rename and a new feature together. If I need to undo the bug fix later, I don't want to lose the feature with it.
-- **Write the message in the present tense**, saying what the commit does: `Fix login redirect`, not `fixed stuff`. Short and specific.
+- **One commit = one thing.** Don't bundle a bug fix, a rename and a new feature together. If I need to undo the bug fix later, I don't want the feature going with it.
+- **Message in the present tense, saying what the commit does:** `Fix login redirect`, not `fixed stuff`. Short and specific.
 
-## 6. The `-am` shortcut
+## The `-am` shortcut
 
-For files Git **already tracks**, `-a` stages and commits them in one step:
+For files Git **already tracks**, `-a` stages and commits in one step:
 
 ```bash
 git commit -am "Update homepage text"
 ```
 
-> [!NOTE]
-> `-a` only grabs **tracked** files. A brand-new file Git has never seen is **not** included — I have to `git add` it at least once first. This is the classic "why didn't my new file get committed?" surprise.
+The catch that got me: `-a` only grabs **tracked** files. A brand-new file Git has never seen is not included — I have to `git add` it at least once first. That's the classic "why didn't my new file get committed?" moment, and I've hit it more than once. And if I ever stage something I didn't mean to, `git restore --staged <file>` takes it back out of the box without touching the file or my edits (the full undo tour is next, in [03](../03-inspecting-and-undoing/README.md)).
 
 ---
 
-## ⚠️ Watch out
-
-- `git add` does **not** save anything — only `git commit` does.
-- **Staging is a snapshot, not a live link.** If I `git add` a file, then edit it again, then commit, the commit has the *first* version. The later edit is still waiting.
-- `git commit -am` skips brand-new (untracked) files.
-- Plain `git commit` with no `-m` opens an editor. If it's Vim: `Esc` then `:wq`. Easier to just use `-m`.
-
-## 🔧 Fix it
-
-Staged something I didn't mean to? Take it back out of the box — the file and my edits are untouched:
-
-```bash
-git restore --staged <file>
-```
-
-(The full undo tour is in [03 · Inspecting & Undoing](../03-inspecting-and-undoing/README.md).)
-
-## 🧪 Try it
-
-> In a fresh folder: make it a repo, create two files, stage only one, commit, then view the one-line history. Then hit the snapshot gotcha on purpose — stage a file, edit it again, commit, and check what actually got saved.
-
-<details>
-<summary>Show the answer</summary>
-
-```bash
-mkdir demo && cd demo && git init
-echo "one" > a.txt
-echo "two" > b.txt
-git add a.txt            # stage only a.txt
-git status -s            # A a.txt   /   ?? b.txt
-git add .
-git commit -m "Add a and b"
-git log --oneline
-
-# the gotcha:
-echo "first" > c.txt
-git add c.txt            # snapshot taken now
-echo "second" >> c.txt   # edit AFTER adding
-git commit -m "Add c"
-git show HEAD:c.txt      # only "first" made it into the commit
-```
-
-</details>
-
-## 🤔 What confused me
-
-> Why `add` and `commit` are two separate steps. `add` only moves a change into the **staging area** — the box — it doesn't save it. `commit` is the real save that seals whatever is in the box into history. They're separate so I can choose exactly what goes into each commit instead of saving everything at once.
-
----
-
-**One-line recap:** `git init` makes the repo; then I loop — edit → `git status` → `git add` → `git commit -m` → `git log`. A commit is a snapshot, staging lets me pick what goes in it, and it's snapshotted at `add` time, not kept as a live link.
+**What tripped me up:** why `add` and `commit` are two separate steps at all — it felt like busywork. It clicked once I stopped thinking of `add` as saving. `add` only moves a change into the box; `commit` is the actual save that seals the box into history. The subtle part is that `add` takes the snapshot *then and there* — if I add a file, edit it again, then commit, the commit holds the version from when I added it, not my latest edit. That one cost me a confusing ten minutes before I spotted it.
 
 ---
 

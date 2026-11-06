@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧾 Git Cheat Sheet
+# Git cheat sheet
 
 A one-page quick reference — the commands I reach for most, grouped by what I'm doing.
 Full explanations live in the [numbered sections](README.md).
@@ -118,7 +118,7 @@ git reset --soft HEAD~1              # uncommit, keep changes staged
 git reset --mixed HEAD~1             # uncommit + unstage (default)
 git reset --hard HEAD~1              # uncommit + discard changes ⚠️
 git revert <commit>                  # safe undo of a PUSHED commit (adds an inverse commit)
-git reflog                           # ⛑ everywhere HEAD has been — recover "lost" commits
+git reflog                           # everywhere HEAD has been — recover "lost" commits
 git rebase -i HEAD~<n>               # reword / squash / drop / reorder recent commits
 ```
 

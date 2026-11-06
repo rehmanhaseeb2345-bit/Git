@@ -1,47 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="820" height="330" viewBox="0 0 820 330" font-family="Segoe UI, Helvetica, Arial, sans-serif">
-  <rect x="1" y="1" width="818" height="328" rx="16" fill="#ffffff" stroke="#d0d7de"/>
-  <text x="40" y="38" font-size="21" font-weight="700" fill="#1f2328">The recovery triage</text>
-  <text x="40" y="61" font-size="13.5" fill="#57606a">One question first: how far did the mistake get? That decides the safe fix.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="'Segoe UI',system-ui,-apple-system,Roboto,sans-serif">
+  <rect x="1" y="1" width="898" height="298" rx="18" fill="#FFFFFF" stroke="#DDE3EC" stroke-width="2"/>
+  <text x="450" y="44" text-anchor="middle" fill="#16233B" font-size="22" font-weight="700">Recovery triage</text>
+  <text x="450" y="66" text-anchor="middle" fill="#5A6B85" font-family="monospace" font-size="13">every fix starts with: how far did the mistake get?</text>
 
-  <defs>
-    <marker id="aB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#1971c2"/></marker>
-    <marker id="aO" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#c2410c"/></marker>
-    <marker id="aG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#1a7f52"/></marker>
-    <marker id="aP" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#8b5cf6"/></marker>
-  </defs>
+  <!-- Card 1: uncommitted -->
+  <rect x="20" y="92" width="200" height="174" rx="12" fill="#D9EEEB" stroke="#19857C" stroke-width="2"/>
+  <text x="120" y="118" text-anchor="middle" fill="#16233B" font-size="14" font-weight="700">① still uncommitted</text>
+  <line x1="40" y1="130" x2="200" y2="130" stroke="#B5DED6" stroke-width="1.5"/>
+  <g fill="#196E67" font-family="monospace" font-size="12.5">
+    <text x="42" y="156">git restore</text>
+    <text x="42" y="180">git stash</text>
+    <text x="42" y="204">git clean</text>
+  </g>
+  <text x="120" y="246" text-anchor="middle" fill="#19857C" font-size="11.5" font-weight="700">safe</text>
 
-  <!-- START node -->
-  <rect x="40" y="140" width="175" height="72" rx="12" fill="#f6f8fa" stroke="#8a93a0" stroke-width="1.6"/>
-  <text x="127" y="172" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1f2328">Where did the</text>
-  <text x="127" y="192" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1f2328">mistake get to?</text>
+  <!-- Card 2: committed not pushed -->
+  <rect x="240" y="92" width="200" height="174" rx="12" fill="#F7E6D6" stroke="#DD7A38" stroke-width="2"/>
+  <text x="340" y="118" text-anchor="middle" fill="#16233B" font-size="14" font-weight="700">② committed, local</text>
+  <line x1="260" y1="130" x2="420" y2="130" stroke="#EBC4A1" stroke-width="1.5"/>
+  <g fill="#9A5A2B" font-family="monospace" font-size="12.5">
+    <text x="262" y="156">git amend</text>
+    <text x="262" y="180">git reset</text>
+    <text x="262" y="204">git rebase -i</text>
+  </g>
+  <text x="340" y="246" text-anchor="middle" fill="#C2410C" font-size="11.5" font-weight="700">local only — rewrite freely</text>
 
-  <!-- arrows -->
-  <path d="M215 176 C 260 176, 270 114, 306 114" fill="none" stroke="#1971c2" stroke-width="2" marker-end="url(#aB)"/>
-  <path d="M215 176 C 260 176, 270 166, 306 166" fill="none" stroke="#c2410c" stroke-width="2" marker-end="url(#aO)"/>
-  <path d="M215 176 C 260 176, 270 218, 306 218" fill="none" stroke="#1a7f52" stroke-width="2" marker-end="url(#aG)"/>
-  <path d="M215 176 C 260 176, 270 270, 306 270" fill="none" stroke="#8b5cf6" stroke-width="2" marker-end="url(#aP)"/>
+  <!-- Card 3: pushed -->
+  <rect x="460" y="92" width="200" height="174" rx="12" fill="#E8E2FB" stroke="#6B4FD8" stroke-width="2"/>
+  <text x="560" y="118" text-anchor="middle" fill="#16233B" font-size="14" font-weight="700">③ already pushed</text>
+  <line x1="480" y1="130" x2="640" y2="130" stroke="#C9BEF2" stroke-width="1.5"/>
+  <g fill="#5B43B0" font-family="monospace" font-size="12.5">
+    <text x="482" y="156">git revert</text>
+    <text x="482" y="180" fill="#9AA3AF">— never reset</text>
+    <text x="482" y="204" fill="#9AA3AF">— never rebase</text>
+  </g>
+  <text x="560" y="246" text-anchor="middle" fill="#6B4FD8" font-size="11.5" font-weight="700">shared — handle with care</text>
 
-  <!-- card 1: uncommitted -->
-  <rect x="310" y="92" width="470" height="44" rx="9" fill="#e7f0fb" stroke="#1971c2" stroke-width="1.5"/>
-  <text x="326" y="110" font-size="12.5" font-weight="700" fill="#1971c2">Still uncommitted</text>
-  <text x="326" y="128" font-size="11.5" fill="#57606a" font-family="Consolas, Menlo, monospace">git restore &lt;file&gt;   ·   git stash</text>
-
-  <!-- card 2: committed not pushed -->
-  <rect x="310" y="144" width="470" height="44" rx="9" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
-  <text x="326" y="162" font-size="12.5" font-weight="700" fill="#c2410c">Committed, not pushed</text>
-  <text x="326" y="180" font-size="11.5" fill="#57606a" font-family="Consolas, Menlo, monospace">git reset   ·   git commit --amend   ·   git rebase -i</text>
-
-  <!-- card 3: already pushed -->
-  <rect x="310" y="196" width="470" height="44" rx="9" fill="#edfbf3" stroke="#1a7f52" stroke-width="1.5"/>
-  <text x="326" y="214" font-size="12.5" font-weight="700" fill="#1a7f52">Already pushed / shared</text>
-  <text x="326" y="232" font-size="11.5" fill="#57606a" font-family="Consolas, Menlo, monospace">git revert &lt;commit&gt;   (safe — never reset a shared branch)</text>
-
-  <!-- card 4: looks lost -->
-  <rect x="310" y="248" width="470" height="44" rx="9" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1.5"/>
-  <text x="326" y="266" font-size="12.5" font-weight="700" fill="#6d28d9">Looks lost entirely</text>
-  <text x="326" y="284" font-size="11.5" fill="#57606a" font-family="Consolas, Menlo, monospace">git reflog   →   git reset --hard &lt;hash&gt;</text>
-
-  <!-- summary bar -->
-  <rect x="40" y="300" width="740" height="24" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
-  <text x="56" y="316" font-size="11.5" fill="#1f2328">Rewrite freely <tspan font-weight="700" fill="#c2410c">before</tspan> you push · <tspan font-weight="700" fill="#1a7f52">after</tspan> you push use revert · <tspan font-weight="700" fill="#6d28d9">reflog</tspan> finds almost anything you lose.</text>
+  <!-- Card 4: lost -->
+  <rect x="680" y="92" width="200" height="174" rx="12" fill="#FBFCFD" stroke="#DDE3EC" stroke-width="2"/>
+  <text x="780" y="118" text-anchor="middle" fill="#16233B" font-size="14" font-weight="700">④ looks lost</text>
+  <line x1="700" y1="130" x2="860" y2="130" stroke="#E7EBF1" stroke-width="1.5"/>
+  <g fill="#16233B" font-family="monospace" font-size="12.5">
+    <text x="702" y="156">git reflog</text>
+    <text x="702" y="180" fill="#5A6B85">find the hash</text>
+    <text x="702" y="204" fill="#5A6B85">reset back to it</text>
+  </g>
+  <text x="780" y="246" text-anchor="middle" fill="#5A6B85" font-size="11.5" font-weight="700">almost always recoverable</text>
 </svg>
