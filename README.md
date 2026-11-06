@@ -7,7 +7,7 @@
 ![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Sections](https://img.shields.io/badge/sections-11-blue?style=for-the-badge)
-![Progress](https://img.shields.io/badge/written-9%20%2F%2011-orange?style=for-the-badge)
+![Progress](https://img.shields.io/badge/written-10%20%2F%2011-orange?style=for-the-badge)
 
 </div>
 
@@ -27,7 +27,7 @@ These are student notes, written as I go. If you spot a mistake, open an issue �
 
 ## 🗺️ What's covered
 
-**Progress:** `██████████████████████░░░░░` 9 / 11
+**Progress:** `█████████████████████████░░` 10 / 11
 &nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
 
 ### Part 1 — Foundations
@@ -80,7 +80,7 @@ Cleaning up before you share, and getting out of any mistake.
 
 | # | Section | What's inside | Status |
 |:-:|---|---|:-:|
-| 10 | [Rewriting History](10-rewriting-history/README.md) | The Golden Rule, `reflog`, `reset`, `revert`, `amend`, interactive rebase | 🚧 |
+| 10 | [Rewriting History](10-rewriting-history/README.md) | The Golden Rule, `reflog`, `reset`, `revert`, `amend`, interactive rebase | ✅ |
 
 ### Appendix
 

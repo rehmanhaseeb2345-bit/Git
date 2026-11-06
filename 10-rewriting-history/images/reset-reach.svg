@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="300" viewBox="0 0 820 300" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="1" y="1" width="818" height="298" rx="16" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="40" y="38" font-size="21" font-weight="700" fill="#1f2328">How far each reset reaches</text>
+  <text x="40" y="61" font-size="13.5" fill="#57606a">git reset moves the branch pointer back — the flag decides what else it rewinds.</text>
+
+  <!-- column headers -->
+  <text x="267" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328">① HEAD / commit</text>
+  <text x="472" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328">② Staging area</text>
+  <text x="677" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328">③ Working files</text>
+
+  <!-- soft -->
+  <text x="48" y="137" font-size="13" font-weight="700" fill="#1971c2" font-family="Consolas, Menlo, monospace">--soft</text>
+  <rect x="170" y="112" width="195" height="40" rx="8" fill="#e7f0fb" stroke="#1971c2" stroke-width="1.5"/>
+  <text x="267" y="137" text-anchor="middle" font-size="12" font-weight="700" fill="#1971c2">moves HEAD</text>
+  <rect x="375" y="112" width="195" height="40" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="472" y="137" text-anchor="middle" font-size="12" fill="#8a93a0">kept</text>
+  <rect x="580" y="112" width="195" height="40" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="677" y="137" text-anchor="middle" font-size="12" fill="#8a93a0">kept</text>
+
+  <!-- mixed -->
+  <text x="48" y="187" font-size="13" font-weight="700" fill="#c2410c" font-family="Consolas, Menlo, monospace">--mixed</text>
+  <text x="48" y="202" font-size="9.5" fill="#8a93a0">(default)</text>
+  <rect x="170" y="162" width="195" height="40" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="267" y="187" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">moves HEAD</text>
+  <rect x="375" y="162" width="195" height="40" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="472" y="187" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">unstaged</text>
+  <rect x="580" y="162" width="195" height="40" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+  <text x="677" y="187" text-anchor="middle" font-size="12" fill="#8a93a0">kept</text>
+
+  <!-- hard -->
+  <text x="48" y="237" font-size="13" font-weight="700" fill="#b01722" font-family="Consolas, Menlo, monospace">--hard</text>
+  <rect x="170" y="212" width="195" height="40" rx="8" fill="#fdecef" stroke="#c9252d" stroke-width="1.5"/>
+  <text x="267" y="237" text-anchor="middle" font-size="12" font-weight="700" fill="#b01722">moves HEAD</text>
+  <rect x="375" y="212" width="195" height="40" rx="8" fill="#fdecef" stroke="#c9252d" stroke-width="1.5"/>
+  <text x="472" y="237" text-anchor="middle" font-size="12" font-weight="700" fill="#b01722">cleared</text>
+  <rect x="580" y="212" width="195" height="40" rx="8" fill="#fdecef" stroke="#c9252d" stroke-width="1.5"/>
+  <text x="677" y="237" text-anchor="middle" font-size="12" font-weight="700" fill="#b01722">cleared ⚠</text>
+
+  <!-- summary bar -->
+  <rect x="40" y="258" width="735" height="34" rx="9" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="56" y="280" font-size="12" fill="#1f2328"><tspan font-weight="700" fill="#1971c2" font-family="Consolas, Menlo, monospace">--soft</tspan> keeps your work · <tspan font-weight="700" fill="#c2410c" font-family="Consolas, Menlo, monospace">--mixed</tspan> unstages it · <tspan font-weight="700" fill="#b01722" font-family="Consolas, Menlo, monospace">--hard</tspan> deletes it — reflog can still rescue recent commits.</text>
+</svg>
