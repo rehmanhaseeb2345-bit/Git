@@ -7,7 +7,7 @@
 ![Git](https://img.shields.io/badge/Git-F05133?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Sections](https://img.shields.io/badge/sections-11-blue?style=for-the-badge)
-![Progress](https://img.shields.io/badge/written-10%20%2F%2011-orange?style=for-the-badge)
+![Progress](https://img.shields.io/badge/written-11%20%2F%2011-brightgreen?style=for-the-badge)
 
 </div>
 
@@ -27,7 +27,7 @@ These are student notes, written as I go. If you spot a mistake, open an issue �
 
 ## 🗺️ What's covered
 
-**Progress:** `█████████████████████████░░` 10 / 11
+**Progress:** `███████████████████████████` 11 / 11 — complete ✅
 &nbsp;&nbsp;·&nbsp;&nbsp; ✅ written &nbsp; 🚧 being written &nbsp; ⬜ not yet
 
 ### Part 1 — Foundations
@@ -86,7 +86,7 @@ Cleaning up before you share, and getting out of any mistake.
 
 | Section | What's inside | Status |
 |---|---|:-:|
-| [⛑ Recovery Guide — I Screwed Up, Now What?](appendix-recovery/README.md) | Symptom → fix for every common disaster, tagged safe vs shared-history care | 🚧 |
+| [⛑ Recovery Guide — I Screwed Up, Now What?](appendix-recovery/README.md) | Symptom → fix for every common disaster, tagged safe vs shared-history care | ✅ |
 
 ## 🧭 How every page is structured
 
