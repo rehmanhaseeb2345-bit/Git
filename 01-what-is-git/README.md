@@ -2,8 +2,6 @@
 
 # 01 · What is Git
 
-**Part 1 — Foundations** · ✅ Done
-
 </div>
 
 > What Git is before I run a single command: a tool that saves the history of my project so I can go back to any point, see what changed, and work with other people without copies flying around. Everything else in these notes sits on top of this.
