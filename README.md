@@ -13,7 +13,7 @@ They're really for one person: future me. When I haven't touched a command in a 
 > [!NOTE]
 > **Every command's output on these pages is real.** Git runs on my own machine (Linux Mint), so I actually ran everything shown — the output is what my terminal printed, not something I made up to illustrate a point.
 
-If you're not me and you found these useful, great — and if you spot a mistake, open an issue, I'd like to fix it.
+If you found these useful, great — and if you spot a mistake, open an issue, I'd like to fix it.
 
 ## What's covered
 
